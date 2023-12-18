@@ -14,27 +14,27 @@ page 50202 "MNB Bonus List"
         {
             repeater(Control1)
             {
-                field("No."; 'No.')
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the bonus number.';
                 }
-                field("Customer No."; 'Customer No.')
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the customer number.';
                 }
-                field("Starting Date"; 'Starting Date')
+                field("Starting Date"; Rec."Starting Date")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the starting date.';
                 }
-                field("Ending Date"; 'Ending Date')
+                field("Ending Date"; Rec."Ending Date")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the ending date.';
                 }
-                field(Status; 'Status')
+                field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the bonus status.';
@@ -57,6 +57,18 @@ page 50202 "MNB Bonus List"
                 RunObject = page "Customer Card";
                 RunPageLink = "No." = field("Customer No.");
                 ToolTip = 'Opens customer card.';
+            }
+
+            action(BonusEntries)
+            {
+                ApplicationArea = All;
+                Caption = 'Bonus Entries';
+                Image = Entry;
+                Promoted = true;
+                PromotedCategory = Process;
+                RunObject = page "MNB Bonus Entries";
+                RunPageLink = "Bonus No" = field("No.");
+                ToolTip = 'open Bonus Entries';
             }
         }
     }

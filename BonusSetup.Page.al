@@ -43,13 +43,14 @@ page 50201 "MNB Bonus Setup"
     var
         myInt: Integer;
 
-    // trigger OnOpenPage()
-    // begin
-    //     Reset();
-    // if not Get() then begin
-    // Init();
-    // Insert();
-    // end
+    trigger OnOpenPage()
+    begin
+        rec.Reset();
+        if not rec.Get() then begin
+            rec.Init();
+            rec.Insert();
+        end
+    end;
 
 }
 

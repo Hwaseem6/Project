@@ -13,27 +13,27 @@ page 50203 "MNB Bonus Card"
             group(General)
             {
                 Caption = 'General';
-                field("No."; 'No.')
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies bonus number.';
                 }
-                field("Customer No."; 'Customer No.')
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies bonus customer number.';
                 }
-                field("Starting Date"; 'Starting Date')
+                field("Starting Date"; Rec."Starting Date")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies bonus starting date.';
                 }
-                field("Ending Date"; 'Ending Date')
+                field("Ending Date"; Rec."Ending Date")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies bonus ending date.';
                 }
-                field(Status; 'Status')
+                field(Status; REc.Status)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies bonus status.';
@@ -62,6 +62,17 @@ page 50203 "MNB Bonus Card"
                 RunObject = page "Customer Card";
                 RunPageLink = "No." = field("Customer No.");
                 ToolTip = 'Opens customer card.';
+            }
+            action(BonusEntries)
+            {
+                ApplicationArea = All;
+                Caption = 'Bonus Entries';
+                Image = Entry;
+                Promoted = true;
+                PromotedCategory = Process;
+                RunObject = page "MNB Bonus Entries";
+                RunPageLink = "Bonus No" = field("No.");
+                ToolTip = 'open Bonus Entries';
             }
         }
     }

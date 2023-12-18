@@ -11,17 +11,17 @@ page 50204 "MNB Bonus Subform"
         {
             repeater(Lines)
             {
-                field(Type; 'Type')
+                field(Type; Rec.Type)
                 {
                     ApplicationArea = All;
                     Tooltip = 'Specifies type of the bonus assigned.';
                 }
-                field("Item No."; 'Item No.')
+                field("Item No."; Rec."Item No.")
                 {
                     ApplicationArea = All;
                     Tooltip = 'Specifies item number for which bonus is assigned.';
                 }
-                field("Bonus Perc."; 'Bonus Perc.')
+                field("Bonus Perc."; Rec."Bonus Perc.")
                 {
                     ApplicationArea = All;
                     Tooltip = 'Specifies bonus percent.';
