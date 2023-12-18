@@ -1,0 +1,32 @@
+{
+  "id": "6f210585-2d93-448a-a9b7-a9024800f615",
+  "name": "ALProject6",
+  "publisher": "Haris Waseem",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "12.0.0.0",
+  "idRanges": [
+    {
+      "from": 50200,
+      "to": 50249
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "12.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
