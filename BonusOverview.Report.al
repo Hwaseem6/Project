@@ -61,6 +61,10 @@ report 50200 "MNB Bonus Overview"
             {
 
             }
+
+
+
+
             dataitem("MNB Bonus Entry"; "MNB Bonus Entry")
             {
                 DataItemLink = "Bonus No" = field("No.");
@@ -82,8 +86,26 @@ report 50200 "MNB Bonus Overview"
 
             }
 
+
+
+            trigger OnAfterGetRecord()
+
+            var
+                MNBBonusEntry: Record "MNB Bonus Entry";
+            begin
+                MNBBonusEntry.CopyFilters("MNB Bonus Entry");
+                MNBBonusEntry.SetRange("Bonus No", "No.");
+                MNBBonusEntry.CalcSums("Bonus Amount");
+                AmountSum := MNBBonusEntry."Bonus Amount";
+            end;
+
+
         }
     }
+
+
+    var
+        AmountSum: Decimal;
 
     var
         BonusNoCaptionLbl: Label 'Bonus No.';
