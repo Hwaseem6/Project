@@ -46,6 +46,13 @@ page 50206 MyTestExecutor
                 Image = ExecuteBatch;
                 RunObject = codeunit MyThirdTestCodeunit;
             }
+            action(TestPages)
+            {
+                ApplicationArea = All;
+                Caption = 'Test Page';
+                Image = ExecuteBatch;
+                RunObject = codeunit MyFourthTestCodeunit;
+            }
         }
     }
 
