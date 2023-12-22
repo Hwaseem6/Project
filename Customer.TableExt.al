@@ -9,6 +9,10 @@ tableextension 50200 "MNB Customer" extends Customer
             CalcFormula = count("MNB Bonus Header" where("Customer No." = field("No.")));
             Editable = false;
         }
+        field(50201; "Lookup Value Code"; Code[10])
+        {
+            TableRelation = "LookupValue";
+        }
 
     }
 
