@@ -1,6 +1,5 @@
 codeunit 50205 MyFourthTestCodeunit
 {
-
     Subtype = Test;
     [Test]
     procedure MyFirstTestPageFunction()
@@ -25,11 +24,7 @@ codeunit 50205 MyFourthTestCodeunit
         Error('Code: %1 \ Discount %: %2 \Description: %3', PaymentTerms.Code.Value(),
         PaymentTerms."Discount %".Value(), PaymentTerms.Description.Value());
         PaymentTerms.Close();
-
     end;
-
-
-
 
     trigger OnRun()
     begin
