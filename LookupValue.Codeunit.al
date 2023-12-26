@@ -41,5 +41,29 @@
 //             LibrarySales.CreateCustomer(Customer);
 //         end;
 
+// local procedure SetLookupValueOnCustomer(
+// var Customer: record Customer; LookupValueCode: Code[10])
+// begin
+// Customer.Validate("Lookup Value Code", LookupValueCode);
+// Customer.Modify();
+// end;
+
+// local procedure VerifyLookupValueOnCustomer(
+// CustomerNo: Code[20]; LookupValueCode: Code[10])
+// var
+// Customer: Record Customer;
+// FieldOnTableTxt: Label '%1 on %2';
+// begin
+// Customer.Get(CustomerNo);
+// Assert.AreEqual(
+// LookupValueCode,
+// Customer."Lookup Value Code",
+// StrSubstNo(
+// FieldOnTableTxt,
+// Customer.FieldCaption("Lookup Value Code"),
+// Customer.TableCaption())
+// );
+// end;
+
 
 // }
